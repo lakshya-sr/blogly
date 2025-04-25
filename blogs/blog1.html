@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My First Blog Post</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 2em auto;
+      padding: 0 1em;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3em;
+    }
+    .meta {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 1.5em;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1em 0;
+    }
+    pre {
+      background-color: #eee;
+      padding: 1em;
+      overflow-x: auto;
+    }
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My First Blog Post</h1>
+  <p class="meta">By Jane Doe • April 25, 2025</p>
+
+  <p>Welcome to my very first blog post! 🎉 Today I want to share how I built my own personal blog using <strong>Flask</strong> and a few lines of HTML and CSS.</p>
+
+  <img src="https://placekitten.com/800/400" alt="Cute kitten">
+  
+  <h2>Why Flask?</h2>
+  <p>I chose Flask because it’s lightweight, flexible, and perfect for small personal projects like this blog.</p>
+
+  <h2>How I Did It</h2>
+  <p>I created a basic Flask app that serves HTML pages from a folder. Here’s a quick code snippet of the core logic:</p>
+
+  <pre><code>from flask import Flask, send_from_directory
+
+app = Flask(__name__)
+
+@app.route('/&lt;page&gt;')
+def serve_page(page):
+    return send_from_directory('static_pages', f'{page}.html')
+  </code></pre>
+
+  <p>It’s that simple! Just drop your HTML files into the <code>static_pages</code> folder and you’re good to go.</p>
+
+  <h2>What’s Next?</h2>
+  <p>Next I’m planning to add Markdown support, maybe a comment system, and a way to post from my phone. Stay tuned! 🛠️</p>
+
+  <p>Thanks for reading! <a href="/index">Back to Home</a></p>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Pages</title>
+  <style>
+    body { font-family: sans-serif; padding: 2em; }
+    input[type="text"] {
+      width: 300px;
+      padding: 0.5em;
+      font-size: 1em;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 0.5em 0;
+    }
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Create Blog</h1>
+  <a href="/create_blog">Create Blog</a>
+  <h1>Search Pages</h1>
+  <input type="text" id="searchInput" placeholder="Search for pages...">
+  
+  <ul id="pageList">
+    <!-- Example hardcoded pages; replace with backend-generated list if needed -->
+    {% for page in pages %}
+        <li><a href="{{ page }}">{{ page }}</a></li>
+    {% endfor %}   
+   </ul>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const pageList = document.getElementById('pageList');
+    const items = pageList.getElementsByTagName('li');
+
+    searchInput.addEventListener('keyup', function () {
+      const filter = searchInput.value.toLowerCase();
+      for (let i = 0; i < items.length; i++) {
+        const text = items[i].innerText.toLowerCase();
+        items[i].style.display = text.includes(filter) ? '' : 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
