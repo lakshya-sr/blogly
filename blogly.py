@@ -9,7 +9,7 @@ BLOG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'blogs')
 
 @app.route('/create_blog')
 def create_blog():
-    return send_from_directory('.', 'create_blog.html')
+    return render_template('create_blog.html')
 
 @app.route('/submit_markdown', methods=['POST'])
 def submit_markdown():

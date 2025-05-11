@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Markdown Blog Editor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/create_blog.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Blog Post (Markdown)</h1>
+    <form action="/submit_markdown" method="post">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" required>
+
+      <label for="content">Markdown Content:</label>
+      <textarea name="content" id="content" placeholder="Write your post in markdown..." required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+
