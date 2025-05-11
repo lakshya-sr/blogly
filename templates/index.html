@@ -1,41 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Search Pages</title>
-  <style>
-    body { font-family: sans-serif; padding: 2em; }
-    input[type="text"] {
-      width: 300px;
-      padding: 0.5em;
-      font-size: 1em;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 0.5em 0;
-    }
-    a {
-      text-decoration: none;
-      color: blue;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <h1>Create Blog</h1>
-  <a href="/create_blog">Create Blog</a>
-  <h1>Search Pages</h1>
-  <input type="text" id="searchInput" placeholder="Search for pages...">
-  
-  <ul id="pageList">
-    <!-- Example hardcoded pages; replace with backend-generated list if needed -->
-    {% for page in pages %}
-        <li><a href="{{ page }}">{{ page }}</a></li>
-    {% endfor %}   
-   </ul>
+  <div class="container">
+    <h1>Create Blog</h1>
+    <a class="button" href="/create_blog">Create Blog</a>
+
+    <h1>Search Pages</h1>
+    <input type="text" id="searchInput" placeholder="Search for pages...">
+
+    <ul id="pageList">
+      {% for page in pages %}
+          <li><a href="{{ page }}">{{ page }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
 
   <script>
     const searchInput = document.getElementById('searchInput');
@@ -50,6 +33,5 @@
       }
     });
   </script>
-
 </body>
 </html>
